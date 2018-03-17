@@ -3,7 +3,6 @@ var router = express.Router();
 var path = require("path");
 
 global.IPAddress="";
-global.RifName="";
 global.Package="";
 global.Table={};
 
@@ -29,7 +28,7 @@ router.get('/debugpkg', function(req, res) {
 });
 /* PS3Xplot 3.0 HAN, Dynamics Files */
 router.get('/injecter', function(req, res) {
-  res.render('actrif_copier',{rifname:RifName});
+  res.render('actrif_copier',{rifname:global.Table[global.Package]});
 });
 /**
  *  Configs
