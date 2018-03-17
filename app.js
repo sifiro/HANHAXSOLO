@@ -6,8 +6,6 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
-var users = require('./routes/users');
-
 var app = express();
 
 // view engine setup
@@ -26,11 +24,10 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  var err = new Error('Not Found');
+  res.json({"status":"FAIL","description":err.message});
   err.status = 404;
-  next(err);
 });
-
+6
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
@@ -39,7 +36,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({"status":"FAIL",errorcode:err.status,"description":err.message});
 });
 
 module.exports = app;
