@@ -11,6 +11,9 @@ global.Package="";
 global.Table={};
 
 var configfile=JSON.parse(require("fs").readFileSync("./config.json"));
+if(configfile.IPAddress&&configfile.IPAddress!=""){
+  global.IPAddress=configfile.IPAddress;
+}
 if(configfile.standalone){
   configfile.url.push("/");
 }
