@@ -24,8 +24,9 @@ app.use('/', index);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
-  res.json({"status":"FAIL","description":err.message});
   err.status = 404;
+  res.json({"status":"404",originalUrl:req.originalUrl,"description":err.message});
+
 });
 6
 // error handler
@@ -36,7 +37,8 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.json({"status":"FAIL",errorcode:err.status,"description":err.message});
+  res.json({"status":"FAIL",originalUrl:req.originalUrl,"description":err.message
+,errorcode:err.status,"description":err.message});
 });
 
 module.exports = app;
