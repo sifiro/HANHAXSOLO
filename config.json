@@ -1,3 +1,4 @@
 {
-    "url":["/","/han"]
+    "standalone":true,
+    "url":["/han"]
 }

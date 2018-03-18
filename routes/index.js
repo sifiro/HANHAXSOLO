@@ -2,10 +2,7 @@ var express = require('express');
 var router = express.Router();
 var path = require("path");
 
-/// TODO: Load configuration from an JSON Local
-global.IPAddress="";
-global.Package="";
-global.Table={};
+
 
 /* GET home page. */
   router.get('/', function(req, res, next) {

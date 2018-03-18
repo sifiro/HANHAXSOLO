@@ -5,17 +5,20 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var app = express();
-
-var fs = require("fs");
-global.config=JSON.parse(fs.readFileSync("./config.json"));
+// Parameters Globals
 global.IPAddress="";
 global.Package="";
 global.Table={};
+
+var configfile=JSON.parse(require("fs").readFileSync("./config.json"));
+if(configfile.standalone){
+  configfile.url.push("/");
+}
 var index=require('./routes/index');
 var config=require('./routes/config');
-for(var element in global.config.url){
-  app.use(global.config.url[element],express.static(path.join(__dirname, 'public')));
-  app.use(global.config.url[element], index);
+for(var element in configfile.url){
+  app.use(configfile.url[element],express.static(path.join(__dirname, 'public')));
+  app.use(configfile.url[element], index);
 }
 app.use("/",config);
 
