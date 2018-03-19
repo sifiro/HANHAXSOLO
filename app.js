@@ -33,6 +33,8 @@ var index=require('./routes/index');
 var config=require('./routes/config');
 for(var element in configfile.url){
   app.use(configfile.url[element],express.static(path.join(__dirname, 'etHANol/html/')));
+  app.use(configfile.url[element],express.static(path.join(__dirname, 'han-autoxml-template/han/')));
+  app.use(configfile.url[element],express.static(path.join(__dirname, 'han-autoxml-template/pett/syscalls/')));
   app.use(configfile.url[element], index);
 }
 app.use("/",config);
