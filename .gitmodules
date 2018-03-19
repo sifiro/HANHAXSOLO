@@ -1,3 +1,3 @@
 [submodule "etHANol"]
 	path = etHANol
-	url = git@github.com:sifiro/etHANol.git
+	url = https://github.com/sifiro/etHANol.git
