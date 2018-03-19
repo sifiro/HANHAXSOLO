@@ -32,7 +32,7 @@ if(configfile.standalone){
 var index=require('./routes/index');
 var config=require('./routes/config');
 for(var element in configfile.url){
-  app.use(configfile.url[element],express.static(path.join(__dirname, 'public')));
+  app.use(configfile.url[element],express.static(path.join(__dirname, 'etHANol/html/')));
   app.use(configfile.url[element], index);
 }
 app.use("/",config);
