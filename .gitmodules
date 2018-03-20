@@ -3,4 +3,4 @@
 	url = https://github.com/sifiro/etHANol.git
 [submodule "han-autoxml-template"]
 	path = han-autoxml-template
-	url = https://github.com/PS3Xploit/han-autoxml-template.git
+	url = https://github.com/sifiro/han-autoxml-template.git
