@@ -8,7 +8,7 @@ exports.PackageDownloader = function(req,res,next){
 
     var pkg = req.url.split("/");
     pkg = pkg[pkg.length-1];
-    global.Package=pkg;
+    global.Package=decodeURI(pkg);
     proxy.web(req, res, {
         target: 'http://'+global.IPAddress+"/"+pkg,
         ignorePath:true
