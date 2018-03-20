@@ -18,6 +18,7 @@ var path = require("path");
   router.get('/debugpkg', function(req, res) {res.sendFile('dbgpkg_enabler.html', { root: path.join(__dirname, '../etHANol/html/')});});
   /* PS3Xplot 3.0 HAN, Dynamics Files */
   router.get('/injecter', function(req, res) {res.render('actrif_copier',{rifname:global.Table[global.Package]});});
+  router.get('/injecter_auto', function(req, res) {res.render('actrif_copier_auto',{rifname:global.Table[global.Package]});});
   /* Reverse Proxy */
   router.get('/GetPackage/*',require("./frontend/getPackage").PackageDownloader);
   router.get('*.pkg',require("./frontend/getPackage").PackageDownloader);
