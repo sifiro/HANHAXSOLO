@@ -10,10 +10,10 @@ exports.SetterConfiguration = function (req, res, next){
       if(req.body.rifname){
         global.RifName=req.body.rifname;
       }
-      res.json({status:"OK"});
+      res.json({status:true});
     }
     catch(err){
-      res.json({status:"FAIL",description:err});
+      res.json({status:false,message:"ERROR",description:err});
 
     }
 }
