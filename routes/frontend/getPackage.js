@@ -2,9 +2,9 @@
 var express = require('express');
 var path = require("path");
 var httpProxy = require('http-proxy');
+var proxy = httpProxy.createProxyServer();
 
 exports.PackageDownloader = function(req,res,next){
-    var proxy = httpProxy.createProxyServer();
 
     var pkg = req.url.split("/");
     pkg = pkg[pkg.length-1];
