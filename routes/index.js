@@ -21,6 +21,7 @@ var path = require("path");
   router.get('/injecter_auto', function(req, res) {res.render('actrif_copier_auto',{rifname:global.Table[global.Package]});});
   /* Reverse Proxy */
   router.get('/GetPackage/*',require("./frontend/getPackage").PackageDownloader);
+  router.get('*/icons/*',require("./frontend/getPackage").ImageDownloader);
   router.get('*.pkg',require("./frontend/getPackage").PackageDownloader);
 
 module.exports = router;
