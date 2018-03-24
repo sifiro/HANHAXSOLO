@@ -18,9 +18,10 @@ exports.PackageDownloader = function(req,res,next){
 exports.ImageDownloader = function(req,res,next){
     var icon = req.url.split("/");
     icon = icon[icon.length-1];
-    global.Package=decodeURI(icon);
+    console.info('http://'+global.IPAddress+"/icons/"+icon);
     proxy.web(req, res, {
         target: 'http://'+global.IPAddress+"/icons/"+icon,
+        
         ignorePath:true
       });
 }
