@@ -16,8 +16,6 @@ exports.PackageDownloader = function(req,res,next){
 }
 
 exports.ImageDownloader = function(req,res,next){
-    var proxy = httpProxy.createProxyServer();
-
     var icon = req.url.split("/");
     icon = icon[icon.length-1];
     global.Package=decodeURI(icon);
