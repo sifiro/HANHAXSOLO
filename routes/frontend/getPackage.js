@@ -6,7 +6,7 @@ var proxy = httpProxy.createProxyServer();
 
 exports.PackageDownloader = function(req,res,next){
 
-    var pkg = req.url.split("/");
+    var pkg = req.path.split("/");
     pkg = pkg[pkg.length-1];
     global.Package=decodeURI(pkg);
     console.info('http://'+global.IPAddress+"/"+pkg);
